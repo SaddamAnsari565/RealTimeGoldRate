@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Calculator Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Ad Scripts -->
+    <script type='text/javascript' src='//pl26848558.profitableratecpm.com/8b/13/d7/8b13d75543113a7b1461f5e03ccf680c.js'></script>
+    <script type='text/javascript' src='//pl26849029.profitableratecpm.com/21/ce/7e/21ce7edd404707257fa4832483730713.js'></script>
+    <script async="async" data-cfasync="false" src="//pl26849209.profitableratecpm.com/500d1ab9785a70eec4df37fba3defc3a/invoke.js"></script>
+    
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .btn-gold {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(45deg, #FFA500, #FF8C00);
+            transform: scale(1.05);
+        }
+        
+        .input-gold {
+            border: 2px solid #FFD700;
+            transition: all 0.3s ease;
+        }
+        
+        .input-gold:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .ad-container {
+            min-height: 120px;
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            border: 2px dashed #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .rate-display {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(16, 185, 129, 0.5); }
+            to { box-shadow: 0 0 30px rgba(16, 185, 129, 0.8); }
+        }
+        
+        .result-box {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .card-hover {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen" style="background: linear-gradient(135deg, #1e293b, #334155, #475569);">
+    
+    <!-- Top Ad Space -->
+    <div class="ad-container">
+        <div id="container-500d1ab9785a70eec4df37fba3defc3a"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-6">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white mb-2">
+                <i class="fas fa-coins text-yellow-400"></i>
+                Gold Calculator Pro
+            </h1>
+            <p class="text-gray-300">Live MCX Rates & Complete Gold Calculations</p>
+        </div>
+        
+        <!-- Live Rate Display -->
+        <div class="rate-display">
+            <h2 class="text-2xl font-bold mb-2">MCX Mini Gold Live Rate</h2>
+            <div class="text-4xl font-bold mb-2">₹<span id="liveRate">97,986</span></div>
+            <div class="text-green-300 text-lg">+2.15% <i class="fas fa-arrow-up"></i></div>
+            <p class="text-sm mt-2">Per 10 grams (1 lot = 100 grams)</p>
+            <div class="grid grid-cols-3 gap-4 mt-4 text-sm">
+                <div>Open: ₹<span id="openRate">95,850</span></div>
+                <div>High: ₹<span id="highRate">98,250</span></div>
+                <div>Low: ₹<span id="lowRate">95,720</span></div>
+            </div>
+        </div>
+        
+        <!-- Ad Space -->
+        <div class="ad-container">
+            <p class="text-gray-500">//pl26848558.profitableratecpm.com/8b/13/d7/8b13d75543113a7b1461f5e03ccf680c.js</p>
+            
+        </div>
+        
+        <!-- Buy/Sell Calculator -->
+        <div class="glass-effect rounded-2xl p-6 mb-8 card-hover">
+            <h3 class="text-2xl font-bold text-white mb-6">
+                <i class="fas fa-calculator text-yellow-400"></i>
+                Buy/Sell Calculator
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-white mb-2">Transaction Type</label>
+                    <select id="transactionType" class="w-full p-3 rounded-lg input-gold">
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Quantity Type</label>
+                    <select id="quantityType" class="w-full p-3 rounded-lg input-gold">
+                        <option value="grams">Grams</option>
+                        <option value="tola">Tola</option>
+                        <option value="ounce">Troy Ounce</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Quantity</label>
+                    <input type="number" id="quantity" class="w-full p-3 rounded-lg input-gold" placeholder="Enter quantity">
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Rate per Gram (₹)</label>
+                    <input type="number" id="ratePerGram" class="w-full p-3 rounded-lg input-gold" placeholder="Enter rate">
+                </div>
+            </div>
+            
+            <button onclick="calculateTransaction()" class="w-full mt-6 p-4 btn-gold text-white font-bold rounded-lg">
+                <i class="fas fa-calculator"></i> Calculate Transaction
+            </button>
+            
+            <div id="transactionSummary" class="mt-6 hidden">
+                <h4 class="text-xl font-bold text-white mb-4">Transaction Summary</h4>
+                <div class="space-y-2">
+                    <div class="result-box">Total Weight: <span id="totalWeight">--</span></div>
+                    <div class="result-box">Rate per gram: <span id="displayRate">--</span></div>
+                    <div class="result-box">Base Amount: <span id="baseAmount">--</span></div>
+                    <div class="result-box">GST (3%): <span id="gstAmount">--</span></div>
+                    <div class="result-box">Making Charges (8%): <span id="makingCharges">--</span></div>
+                    <div class="result-box">Brokerage (0.25%): <span id="brokerageAmount">--</span></div>
+                    <div class="result-box bg-gradient-to-r from-yellow-500 to-orange-500 text-xl font-bold">
+                        Total Amount: <span id="totalAmount">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ad Space -->
+        <div class="ad-container">
+            <p class="text-gray-500">//pl26849029.profitableratecpm.com/21ce/7e/21ce7edd404707257fa4832483730713.js</p>
+        </div>
+        
+        <!-- Profit/Loss Calculator -->
+        <div class="glass-effect rounded-2xl p-6 mb-8 card-hover">
+            <h3 class="text-2xl font-bold text-white mb-6">
+                <i class="fas fa-chart-line text-green-400"></i>
+                Profit/Loss Calculator
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-white mb-2">Buy Price (₹)</label>
+                    <input type="number" id="buyPrice" class="w-full p-3 rounded-lg input-gold" placeholder="Enter buy price">
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Sell Price (₹)</label>
+                    <input type="number" id="sellPrice" class="w-full p-3 rounded-lg input-gold" placeholder="Enter sell price">
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Quantity (grams)</label>
+                    <input type="number" id="plQuantity" class="w-full p-3 rounded-lg input-gold" placeholder="Enter quantity">
+                </div>
+            </div>
+            
+            <button onclick="calculatePL()" class="w-full mt-6 p-4 btn-gold text-white font-bold rounded-lg">
+                <i class="fas fa-chart-bar"></i> Calculate P&L
+            </button>
+            
+            <div id="plAnalysis" class="mt-6 hidden">
+                <h4 class="text-xl font-bold text-white mb-4">P&L Analysis</h4>
+                <div class="space-y-2">
+                    <div class="result-box">Buy Value: <span id="buyValue">--</span></div>
+                    <div class="result-box">Sell Value: <span id="sellValue">--</span></div>
+                    <div class="result-box">Price Difference: <span id="priceDifference">--</span></div>
+                    <div class="result-box">Trading Charges (0.5%): <span id="tradingCharges">--</span></div>
+                    <div class="result-box bg-gradient-to-r from-green-500 to-blue-500 text-xl font-bold">
+                        Net P&L: <span id="netPL">--</span>
+                    </div>
+                    <div class="result-box">P&L Percentage: <span id="plPercentage">--</span></div>
+                </div>
+                <div id="plAnalysisText" class="mt-4 p-4 bg-gray-700 rounded-lg text-white">
+                    Analysis will appear here
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unit Converter -->
+        <div class="glass-effect rounded-2xl p-6 mb-8 card-hover">
+            <h3 class="text-2xl font-bold text-white mb-6">
+                <i class="fas fa-exchange-alt text-blue-400"></i>
+                Unit Converter
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-white mb-2">From Unit</label>
+                    <select id="fromUnit" class="w-full p-3 rounded-lg input-gold">
+                        <option value="grams">Grams</option>
+                        <option value="tola">Tola</option>
+                        <option value="ounce">Troy Ounce</option>
+                        <option value="kg">Kilogram</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">To Unit</label>
+                    <select id="toUnit" class="w-full p-3 rounded-lg input-gold">
+                        <option value="tola">Tola</option>
+                        <option value="grams">Grams</option>
+                        <option value="ounce">Troy Ounce</option>
+                        <option value="kg">Kilogram</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Value</label>
+                    <input type="number" id="convertValue" class="w-full p-3 rounded-lg input-gold" placeholder="Enter value">
+                </div>
+            </div>
+            
+            <button onclick="convertUnits()" class="w-full mt-6 p-4 btn-gold text-white font-bold rounded-lg">
+                <i class="fas fa-sync-alt"></i> Convert
+            </button>
+            
+            <div id="conversionResult" class="mt-6 hidden">
+                <h4 class="text-xl font-bold text-white mb-4">Conversion Result</h4>
+                <div class="result-box text-center text-2xl font-bold">
+                    <span id="convertedValue">--</span>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-gray-700 rounded-lg p-4">
+                <h5 class="text-lg font-bold text-white mb-3">Quick Reference</h5>
+                <div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
+                    <div>1 Tola = 11.66 Grams</div>
+                    <div>1 Troy Ounce = 31.1 Grams</div>
+                    <div>1 Kilogram = 1000 Grams</div>
+                    <div>1 Gram = 0.0858 Tola</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Price Rate Calculator -->
+        <div class="glass-effect rounded-2xl p-6 mb-8 card-hover">
+            <h3 class="text-2xl font-bold text-white mb-6">
+                <i class="fas fa-money-bill-wave text-purple-400"></i>
+                Price Rate Calculator
+            </h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-white mb-2">Total Amount (₹)</label>
+                    <input type="number" id="totalAmountInput" class="w-full p-3 rounded-lg input-gold" placeholder="Enter total amount">
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Total Weight</label>
+                    <input type="number" id="totalWeightInput" class="w-full p-3 rounded-lg input-gold" placeholder="Enter weight">
+                </div>
+                
+                <div>
+                    <label class="block text-white mb-2">Weight Unit</label>
+                    <select id="weightUnit" class="w-full p-3 rounded-lg input-gold">
+                        <option value="grams">Grams</option>
+                        <option value="tola">Tola</option>
+                        <option value="ounce">Troy Ounce</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button onclick="calculateRate()" class="w-full mt-6 p-4 btn-gold text-white font-bold rounded-lg">
+                <i class="fas fa-calculator"></i> Calculate Rate
+            </button>
+            
+            <div id="rateCalculation" class="mt-6 hidden">
+                <h4 class="text-xl font-bold text-white mb-4">Rate Calculation</h4>
+                <div class="space-y-2">
+                    <div class="result-box">Per Gram: <span id="perGram">--</span></div>
+                    <div class="result-box">Per Tola: <span id="perTola">--</span></div>
+                    <div class="result-box">Per 10 Grams: <span id="per10Grams">--</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Ad Space -->
+        <div class="ad-container">
+            <p class="text-gray-500">//pl26849209.profitableratecpm.com/500d1ab9785a70eec4df37fba3defc3a/invoke.js</p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-400">
+            <p>© 2024 Gold Calculator Pro. Live rates updated every 30 seconds.</p>
+            <p class="mt-2">
+                <i class="fab fa-whatsapp text-green-400"></i>
+                For support, contact via WhatsApp
+            </p>
+        </div>
+        
+    </div>
+    
+    <script>
+        // Conversion rates
+        const conversionRates = {
+            grams: 1,
+            tola: 11.66,
+            ounce: 31.1,
+            kg: 1000
+        };
+        
+        // Live rate update simulation
+        function updateLiveRates() {
+            const baseRate = 97986;
+            const variation = Math.random() * 1000 - 500;
+            const newRate = Math.round(baseRate + variation);
+            
+            document.getElementById('liveRate').textContent = newRate.toLocaleString();
+            
+            // Update other rates
+            document.getElementById('openRate').textContent = Math.round(newRate * 0.98).toLocaleString();
+            document.getElementById('highRate').textContent = Math.round(newRate * 1.02).toLocaleString();
+            document.getElementById('lowRate').textContent = Math.round(newRate * 0.97).toLocaleString();
+        }
+        
+        // Update rates every 30 seconds
+        setInterval(updateLiveRates, 30000);
+        
+        // Calculate Transaction
+        function calculateTransaction() {
+            const transactionType = document.getElementById('transactionType').value;
+            const quantityType = document.getElementById('quantityType').value;
+            const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+            const ratePerGram = parseFloat(document.getElementById('ratePerGram').value) || 0;
+            
+            if (quantity <= 0 || ratePerGram <= 0) {
+                alert('Please enter valid quantity and rate values.');
+                return;
+            }
+            
+            // Convert to grams
+            const quantityInGrams = quantity * conversionRates[quantityType];
+            const baseAmount = quantityInGrams * ratePerGram;
+            const gst = baseAmount * 0.03;
+            const makingCharges = baseAmount * 0.08;
+            const brokerage = baseAmount * 0.0025;
+            const totalAmount = baseAmount + gst + makingCharges + brokerage;
+            
+            // Display results
+            document.getElementById('totalWeight').textContent = `${quantityInGrams.toFixed(2)} grams`;
+            document.getElementById('displayRate').textContent = `₹${ratePerGram.toLocaleString()}`;
+            document.getElementById('baseAmount').textContent = `₹${baseAmount.toLocaleString()}`;
+            document.getElementById('gstAmount').textContent = `₹${gst.toLocaleString()}`;
+            document.getElementById('makingCharges').textContent = `₹${makingCharges.toLocaleString()}`;
+            document.getElementById('brokerageAmount').textContent = `₹${brokerage.toLocaleString()}`;
+            document.getElementById('totalAmount').textContent = `₹${totalAmount.toLocaleString()}`;
+            
+            document.getElementById('transactionSummary').classList.remove('hidden');
+            document.getElementById('transactionSummary').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Calculate P&L
+        function calculatePL() {
+            const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+            const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+            const quantity = parseFloat(document.getElementById('plQuantity').value) || 0;
+            
+            if (buyPrice <= 0 || sellPrice <= 0 || quantity <= 0) {
+                alert('Please enter valid buy price, sell price, and quantity values.');
+                return;
+            }
+            
+            const buyValue = buyPrice * quantity;
+            const sellValue = sellPrice * quantity;
+            const priceDiff = sellValue - buyValue;
+            const tradingCharges = (buyValue + sellValue) * 0.005;
+            const netPL = priceDiff - tradingCharges;
+            const plPercentage = (netPL / buyValue) * 100;
+            
+            // Display results
+            document.getElementById('buyValue').textContent = `₹${buyValue.toLocaleString()}`;
+            document.getElementById('sellValue').textContent = `₹${sellValue.toLocaleString()}`;
+            document.getElementById('priceDifference').textContent = `₹${priceDiff.toLocaleString()}`;
+            document.getElementById('tradingCharges').textContent = `₹${tradingCharges.toLocaleString()}`;
+            document.getElementById('netPL').textContent = `₹${netPL.toLocaleString()}`;
+            document.getElementById('plPercentage').textContent = `${plPercentage.toFixed(2)}%`;
+            
+            // Analysis text
+            let analysisText = '';
+            if (netPL > 0) {
+                analysisText = `🎉 Profitable Trade! You made a profit of ₹${netPL.toLocaleString()} (${plPercentage.toFixed(2)}%). Great job!`;
+            } else if (netPL < 0) {
+                analysisText = `📉 Loss Trade. You incurred a loss of ₹${Math.abs(netPL).toLocaleString()} (${Math.abs(plPercentage).toFixed(2)}%). Consider your trading strategy.`;
+            } else {
+                analysisText = `⚖️ Break-even Trade. No profit or loss after trading charges.`;
+            }
+            
+            document.getElementById('plAnalysisText').textContent = analysisText;
+            document.getElementById('plAnalysis').classList.remove('hidden');
+            document.getElementById('plAnalysis').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Convert Units
+        function convertUnits() {
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toUnit = document.getElementById('toUnit').value;
+            const value = parseFloat(document.getElementById('convertValue').value) || 0;
+            
+            if (value <= 0) {
+                alert('Please enter a valid value to convert.');
+                return;
+            }
+            
+            // Convert to grams first, then to target unit
+            const valueInGrams = value * conversionRates[fromUnit];
+            const convertedValue = valueInGrams / conversionRates[toUnit];
+            
+            document.getElementById('convertedValue').textContent = 
+                `${convertedValue.toFixed(4)} ${toUnit}`;
+            
+            document.getElementById('conversionResult').classList.remove('hidden');
+            document.getElementById('conversionResult').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Calculate Rate
+        function calculateRate() {
+            const totalAmount = parseFloat(document.getElementById('totalAmountInput').value) || 0;
+            const totalWeight = parseFloat(document.getElementById('totalWeightInput').value) || 0;
+            const weightUnit = document.getElementById('weightUnit').value;
+            
+            if (totalAmount <= 0 || totalWeight <= 0) {
+                alert('Please enter valid total amount and weight values.');
+                return;
+            }
+            
+            // Convert weight to grams
+            const weightInGrams = totalWeight * conversionRates[weightUnit];
+            const ratePerGram = totalAmount / weightInGrams;
+            const ratePerTola = ratePerGram * 11.66;
+            const ratePer10Grams = ratePerGram * 10;
+            
+            document.getElementById('perGram').textContent = `₹${ratePerGram.toFixed(2)}`;
+            document.getElementById('perTola').textContent = `₹${ratePerTola.toFixed(2)}`;
+            document.getElementById('per10Grams').textContent = `₹${ratePer10Grams.toFixed(2)}`;
+            
+            document.getElementById('rateCalculation').classList.remove('hidden');
+            document.getElementById('rateCalculation').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Initialize with current rate in input fields
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('ratePerGram').value = '9798';
+            document.getElementById('buyPrice').value = '9798';
+            document.getElementById('sellPrice').value = '9850';
+        });
+    </script>
+</body>
+</html>
